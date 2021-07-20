@@ -106,7 +106,8 @@ runs:
     - name: Kill All ngrok
       run: |
         killall ngrok
-        
+      shell: bash
+      
     - name: Start ngrok
       run: |
         printf "# Starting ngrok..."
