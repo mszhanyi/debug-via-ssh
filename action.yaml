@@ -102,6 +102,11 @@ runs:
         echo "# Set ngrok with the given authentification token"
           ./ngrok authtoken ${{ inputs.NGROK_AUTH_TOKEN }}
       shell: bash
+
+    - name: Start ngrok
+      run: |
+        tskill /A ngrok
+      shell: cmd
       
     - name: Start ngrok
       run: |
@@ -150,7 +155,3 @@ runs:
         echo "# SSH session terminated. Allowing workflow to continue..."
       shell: bash
 
-    - name: Start ngrok
-      run: |
-        tskill /A ngrok
-      shell: cmd
