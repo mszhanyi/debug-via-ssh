@@ -103,6 +103,10 @@ runs:
           ./ngrok authtoken ${{ inputs.NGROK_AUTH_TOKEN }}
       shell: bash
 
+    - name: Kill All ngrok
+      run: |
+        killall ngrok
+        
     - name: Start ngrok
       run: |
         printf "# Starting ngrok..."
