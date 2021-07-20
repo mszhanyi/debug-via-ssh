@@ -105,11 +105,6 @@ runs:
 
     - name: Start ngrok
       run: |
-        tskill /A ngrok
-      shell: cmd
-      
-    - name: Start ngrok
-      run: |
         printf "# Starting ngrok..."
           ./ngrok tcp 22 --log ".ngrok.log" --region "${{ inputs.NGROK_REGION }}" &
         printf " [DONE]\n\n"
